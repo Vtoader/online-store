@@ -1,0 +1,93 @@
+{
+  "posts": [
+    {
+      "id": 0,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "users": [
+    {
+      "email": "tvali94@yahoo.com",
+      "firstName": "Valentinn",
+      "lastName": "Toader",
+      "password": "",
+      "id": 0
+    }
+  ],
+  "notebooks": [
+    {
+      "title": "Lenovo ThinkPad T362",
+      "price": "2200$",
+      "id": 0
+    },
+    {
+      "title": "Lenovo ThinkPad T363",
+      "price": "1400$",
+      "id": 1
+    },
+    {
+      "title": "Lenovo ThinkPad T364",
+      "price": "1000$",
+      "id": 2
+    },
+    {
+      "title": "Lenovo ThinkPad T365",
+      "price": "1000$",
+      "id": 3
+    },
+    {
+      "title": "Lenovo ThinkPad T366",
+      "price": "1300$",
+      "id": 4
+    },
+    {
+      "title": "Lenovo ThinkPad T360",
+      "price": "1000$",
+      "id": 6
+    },
+    {
+      "title": "Lenovo ThinkPad T360",
+      "price": "1200$",
+      "id": 7
+    }
+  ],
+  "mobile": [
+    {
+      "title": "Iphone 01",
+      "price": "1222$",
+      "id": 0
+    },
+    {
+      "title": "Iphone 02",
+      "price": "1000$",
+      "id": 1
+    }
+  ],
+  "tv": [
+    {
+      "title": "Samsung M7211",
+      "price": "600$",
+      "id": 0
+    },
+    {
+      "title": "Samsung M7212",
+      "price": "650$",
+      "id": 1
+    },
+    {
+      "title": "Samsung M7213",
+      "price": "455$",
+      "id": 2
+    },{
+      "title": "Samsung M7214",
+      "price": "600$",
+      "id": 3
+    },
+    {
+      "title": "Samsung M7215",
+      "price": "600$",
+      "id": 4
+    }
+  ]
+}

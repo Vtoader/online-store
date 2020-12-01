@@ -12,24 +12,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { ProductsComponent } from './products/products.component';
+import { ProductsService } from './products/products.service';
+import { CartComponent } from './cart/cart.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'my-account', component: MyAccountComponent},
-  // { path: 'products' ,
-  //     children: [
-  //       {
-  //         path: 'notebooks',
-  //         component: ProductsComponent,
-  //       },{
-  //         path: 'mobile',
-  //         component: ProductsComponent,
-  //       },{
-  //         path: 'tv',
-  //         component: ProductsComponent,
-  //       }
-  //   ]
-  // }
   { path: 'products/:id', component: ProductsComponent}
 ]
 
@@ -40,7 +28,8 @@ const appRoutes: Routes = [
     HeaderComponent,
     HomeComponent,
     MyAccountComponent,
-    ProductsComponent
+    ProductsComponent,
+    CartComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
@@ -51,7 +40,7 @@ const appRoutes: Routes = [
     FormsModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
-  providers: [],
+  providers: [ProductsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

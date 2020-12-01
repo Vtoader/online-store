@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { Product } from './model/product.model';
-import { map } from 'rxjs/operators';
+import { ProductsService } from './products.service'
 
 @Component({
   selector: 'app-products',
@@ -10,9 +10,9 @@ import { map } from 'rxjs/operators';
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit {
-  loadedProducts = [];
+  loadedProducts: Product[] = [];
 
-  constructor(private route: ActivatedRoute, private http: HttpClient) {}
+  constructor(private productService: ProductsService, private route: ActivatedRoute, private http: HttpClient) {}
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
@@ -20,23 +20,15 @@ export class ProductsComponent implements OnInit {
     });
   }
   getProducts(type: string){
-    this.http.get(`http://localhost:3000/${type}`)
-    .pipe(
-      map(res => {
-      let productsArray = [];
-      for (const key in res){
-        productsArray.push(res[key]);
-      }
-      return productsArray;
-    })
-    )
+    this.http.get<Product[]>(`http://localhost:3000/${type}`)
       .subscribe(products => {
         this.loadedProducts = products;
       })
   }
-  addToCart(){
-    console.log
+  addToCart(res: Product){
+    this.productService.cartChanged(res)
   }
+  
   
 
 }

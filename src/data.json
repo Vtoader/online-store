@@ -56,38 +56,45 @@
     {
       "title": "Iphone 01",
       "price": "1222$",
-      "id": 0
+      "id": 8
     },
     {
       "title": "Iphone 02",
       "price": "1000$",
-      "id": 1
+      "id": 9
     }
   ],
   "tv": [
     {
       "title": "Samsung M7211",
       "price": "600$",
-      "id": 0
+      "id": 10
     },
     {
       "title": "Samsung M7212",
       "price": "650$",
-      "id": 1
+      "id": 11
     },
     {
       "title": "Samsung M7213",
       "price": "455$",
-      "id": 2
+      "id": 12
     },{
       "title": "Samsung M7214",
       "price": "600$",
-      "id": 3
+      "id": 13
     },
     {
       "title": "Samsung M7215",
       "price": "600$",
-      "id": 4
+      "id": 14
+    }
+  ],
+  "cart": [
+    {
+      "title": "Iphone 01",
+      "price": "1222$",
+      "id": 8
     }
   ]
 }

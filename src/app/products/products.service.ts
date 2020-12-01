@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { ITS_JUST_ANGULAR } from '@angular/core/src/r3_symbols';
 import { Product } from './model/product.model';
 
 @Injectable({
@@ -7,7 +8,11 @@ import { Product } from './model/product.model';
 export class ProductsService {
     cartProducts: Product[] = [];
   cartChanged(product: Product){
-   this.cartProducts.push(product);
+    if(this.cartProducts.find(elem => elem.title == product.title)){
+      product.quantity += 1;
+    } else {
+      this.cartProducts.push(product);
+    }
   }
 
   constructor() { }

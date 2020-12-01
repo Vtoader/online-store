@@ -37,9 +37,9 @@
       <li class="nav-item">
         <a class="nav-link dropdown-toggle text-primary" data-toggle="dropdown">Cart({{productService.cartProducts.length}})<img src="assets\shopping-app-icon-4.jpg" width="45" height="45" alt=""></a>
         <ul class="dropdown-menu text-center" role="menu">
-          <li class="dropdown-item text-primary" *ngFor="let item of productService.cartProducts">{{item.title}}</li>
+          <li class="dropdown-item text-primary" *ngFor="let item of productService.cartProducts">{{item.title}} ({{item.quantity}})</li>
           <div class="dropdown-divider"></div>
-          <button class="btn btn-primary">Show cart details</button>
+          <button class="btn btn-primary" routerLink="/cart">Show cart details</button>
         </ul>
       </li>
       </ul>

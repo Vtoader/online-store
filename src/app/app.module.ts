@@ -18,7 +18,8 @@ import { CartComponent } from './cart/cart.component';
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'my-account', component: MyAccountComponent},
-  { path: 'products/:id', component: ProductsComponent}
+  { path: 'products/:id', component: ProductsComponent},
+  { path: 'cart', component: CartComponent}
 ]
 
 

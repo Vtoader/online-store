@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { User } from './model/user.model'
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -13,7 +14,7 @@ export class MyAccountComponent implements OnInit {
   userForm: any;
   
 
-  constructor(private http: HttpClient, private formBuilder: FormBuilder) { 
+  constructor(private http: HttpClient, private formBuilder: FormBuilder, private router: Router) { 
     this.userForm = this.formBuilder.group({
       email: '',
       firstName: '',
@@ -27,7 +28,7 @@ export class MyAccountComponent implements OnInit {
   }
   onSubmit(userData: any){
     this.http.put('http://localhost:3000/users/1', userData).subscribe(response => {
-      console.log(response)
+      this.router.navigate(["/"]);
     });
   }
   getUser(){

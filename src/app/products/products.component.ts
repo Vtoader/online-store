@@ -2,7 +2,8 @@ import { Component, EventEmitter, OnInit, Output} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { Product } from './model/product.model';
-import { ProductsService } from './products.service'
+import { ProductsService } from './products.service';
+
 
 @Component({
   selector: 'app-products',

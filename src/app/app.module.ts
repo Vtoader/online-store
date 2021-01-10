@@ -14,12 +14,16 @@ import { environment } from '../environments/environment';
 import { ProductsComponent } from './products/products.component';
 import { ProductsService } from './products/products.service';
 import { CartComponent } from './cart/cart.component';
+import { AddProductComponent } from './add-product/add-product.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';  
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'my-account', component: MyAccountComponent},
   { path: 'products/:id', component: ProductsComponent},
-  { path: 'cart', component: CartComponent}
+  { path: 'cart', component: CartComponent},
+  { path: 'add-product', component: AddProductComponent}
 ]
 
 
@@ -30,7 +34,8 @@ const appRoutes: Routes = [
     HomeComponent,
     MyAccountComponent,
     ProductsComponent,
-    CartComponent
+    CartComponent,
+    AddProductComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
@@ -40,6 +45,8 @@ const appRoutes: Routes = [
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
+    ToastrModule.forRoot(),  
+    BrowserAnimationsModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [ProductsService],

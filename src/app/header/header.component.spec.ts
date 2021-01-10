@@ -14,7 +14,7 @@ describe('HeaderComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ HeaderComponent ],
-      imports: [HttpClientTestingModule]
+      imports: [HttpClientTestingModule, RouterTestingModule]
     })
     .compileComponents();
   });
@@ -28,5 +28,36 @@ describe('HeaderComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should check notebooks router', () => {
+  let href = fixture.debugElement.query(By.css('.notebooks')).nativeElement
+    .getAttribute('href');
+    expect(href).toEqual('/products/notebooks');
+  });
+
+  it('should check mobile router', () => {
+  let href = fixture.debugElement.query(By.css('.mobile')).nativeElement
+    .getAttribute('href');
+    expect(href).toEqual('/products/mobile');
+  });
+
+  it('should check tv router', () => {
+    let href = fixture.debugElement.query(By.css('.tv')).nativeElement
+      .getAttribute('href');
+      expect(href).toEqual('/products/tv');
+    });
+
+    it('should check my-account router', () => {
+      let href = fixture.debugElement.query(By.css('.my-account')).nativeElement
+        .getAttribute('href');
+        expect(href).toEqual('/my-account');
+      });
+
+      it('should check add-product router', () => {
+        let href = fixture.debugElement.query(By.css('.add-product')).nativeElement
+          .getAttribute('href');
+          expect(href).toEqual('/add-product');
+        });
+    
   
 });
